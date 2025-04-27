@@ -1,0 +1,17 @@
+<h1>🌶️辣条输入法1.0.3版</h1>
+<input id="x"><br>
+<button onclick="x()">开始语音输入吧</button>
+<script>
+function x() {
+  let x = new webkitSpeechRecognition();
+  x.lang = 'zh-CN'; 
+  x.interimResult = false; 
+
+  x.start();
+
+  x.onresult = function(ccy) {
+    let xu= ccy.results[0][0].transcript; 
+    document.getElementById("x").value = xu;
+  };
+}
+</script>
